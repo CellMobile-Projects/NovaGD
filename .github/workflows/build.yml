@@ -1,1 +1,26 @@
+name: NovaGD Build
+
+on:
+workflow_dispatch:
+push:
+branches:
+- main
+
+jobs:
+build:
+name: Check Build Environment
+runs-on: ubuntu-latest
+
+```
+steps:
+  - name: Check out repository
+    uses: actions/checkout@v4
+
+  - name: Show build environment
+    run: |
+      echo "NovaGD cloud build started!"
+      uname -m
+      cmake --version
+      g++ --version
+```
 
